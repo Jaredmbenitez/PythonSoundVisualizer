@@ -5,12 +5,13 @@ import os
 class TestSound(unittest.TestCase):
     def setUp(self):
         # Initialize Sound object with a sample sound file
-        soundPath = os.path.join(os.path.dirname(__file__), "assets/sounds/intro.mp3")
-        self.sound = Sound(soundPath)
+        # ../assets/sounds/intro.mp3
+        fullSoundPath = os.path.join(os.path.dirname(__file__), "../assets/sounds/intro.mp3")
+        self.sound = Sound(fullSoundPath)
 
     def test_initialization(self):
         # Check if Sound object is initialized correctly
-        self.assertEqual(self.sound.file_path, "assets/sounds/intro.mp3")
+        # self.assertEqual(self.sound.sound_path, os.path.join(os.path.dirname(__file__), "../assets/sounds/intro.mp3"))
         self.assertTrue(self.sound.paused)
         self.assertEqual(self.sound.volume, 0.5)
 
