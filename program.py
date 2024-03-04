@@ -1,13 +1,14 @@
 import pygame
 from classes.screen_manager import ScreenManager
 from classes.sound import Sound
-
+import os
 
 class SoundPlayerApp:
     def __init__(self):
         pygame.init()
         self.screen_manager = ScreenManager(400, 300)
-        self.sound = Sound("assets/sounds/intro.mp3")
+        fullSoundPath = os.path.join(os.path.dirname(__file__), "assets/sounds/intro.mp3")
+        self.sound = Sound(fullSoundPath)
 
     def run(self):
         running = True
