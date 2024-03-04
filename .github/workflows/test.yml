@@ -19,8 +19,7 @@ jobs:
       - name: Set up environment variables
         env:
           SDL_VIDEODRIVER: "dummy"
-          SDL_AUDIODRIVER: "disk"
-
+          SDL_AUDIODRIVER: "dummy"
         run: echo "Environment variables set up"
 
       - name: run unittests
