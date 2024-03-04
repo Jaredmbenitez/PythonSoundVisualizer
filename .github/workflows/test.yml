@@ -1,0 +1,22 @@
+name: CI
+on:
+  push:
+    branches: [master]
+  pull_request:
+    branches: [master]
+jobs:
+  run_unittest:
+    name: Run unittest with coverage
+    runs-on: ubuntu-latest
+    steps:
+      - name: checkout
+        uses: actions/checkout@v4
+
+      - uses: actions/setup-python@v5
+        with:
+          python-version: "3.10"
+
+      - name: run unittests
+        run: |
+          pip install -r requirements.txt
+          python -m unittest discover -s tests -v
