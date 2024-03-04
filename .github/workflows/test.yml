@@ -16,13 +16,10 @@ jobs:
         with:
           python-version: "3.10"
 
-      - name: Set up environment variables
+      - name: run unittests
         env:
           SDL_VIDEODRIVER: "dummy"
           SDL_AUDIODRIVER: "dummy"
-        run: echo "Environment variables set up"
-
-      - name: run unittests
         run: |
           pip install -r requirements.txt
           python -m unittest discover -s tests -v
