@@ -6,7 +6,7 @@ on:
     branches: [master]
 jobs:
   run_unittest:
-    name: Run unittest with coverage
+    name: Run Unit Tests with unittest
     runs-on: ubuntu-latest
     steps:
       - name: checkout

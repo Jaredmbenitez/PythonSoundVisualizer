@@ -1,10 +1,12 @@
 import unittest
 from classes.sound import Sound
+import os
 
 class TestSound(unittest.TestCase):
     def setUp(self):
         # Initialize Sound object with a sample sound file
-        self.sound = Sound("assets/sounds/intro.mp3")
+        soundPath = os.path.join(os.path.dirname(__file__), "assets/sounds/intro.mp3")
+        self.sound = Sound(soundPath)
 
     def test_initialization(self):
         # Check if Sound object is initialized correctly
