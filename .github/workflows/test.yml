@@ -10,16 +10,16 @@ jobs:
     runs-on: ubuntu-latest
     steps:
       - name: checkout
-        uses: actions/checkout@v4
+        uses: actions/checkout@v4 # Use premade action to checkout the repository
 
-      - uses: actions/setup-python@v5
+      - uses: actions/setup-python@v5 # Use premade action to set up Python
         with:
           python-version: "3.10"
 
       - name: run unittests
         env:
-          SDL_VIDEODRIVER: "dummy"
-          SDL_AUDIODRIVER: "dummy"
+          SDL_VIDEODRIVER: "dummy" # Set dummy Video driver for headless testing
+          SDL_AUDIODRIVER: "dummy" # Set dummy Audio driver for headless testing
         run: |
           pip install -r requirements.txt
           python -m unittest discover -s tests -v
