@@ -11,7 +11,6 @@ class TestSound(unittest.TestCase):
 
     def test_initialization(self):
         # Check if Sound object is initialized correctly
-        # self.assertEqual(self.sound.sound_path, os.path.join(os.path.dirname(__file__), "../assets/sounds/intro.mp3"))
         self.assertTrue(self.sound.paused)
         self.assertEqual(self.sound.volume, 0.5)
 
